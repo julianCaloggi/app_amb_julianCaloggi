@@ -10,8 +10,8 @@ import {
   FlatList,
   Modal,
 } from "react-native";
-
 import { useState } from "react";
+import AddItemList from "./components/addItemList/addItemList";
 
 export default function App() {
   const [InputText, setInputText] = useState("");
@@ -49,20 +49,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.container_input_button}>
-        <TextInput
-          style={styles.input}
-          placeholder="Ingrese un texto"
-          onChangeText={TextController}
-          value={InputText}
-        />
-        <TouchableOpacity
-          style={styles.button_list}
-          onPress={TextButtonInputList}
-        >
-          <Text style={styles.text_button_list}>Agregar</Text>
-        </TouchableOpacity>
-      </View>
+      <AddItemList
+        TextInput={InputText}
+        TextController={TextController}
+        TextButtonInputList={TextButtonInputList}
+      />
 
       <FlatList
         style={styles.container_items_list}
@@ -117,42 +108,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffffff",
     height: "100%",
     margin: 20,
-  },
-
-  container_input_button: {
-    backgroundColor: "#D3D3D3",
-    borderRadius: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    padding: 20,
-    margin: 10,
-    borderColor: "black",
-    borderWidth: 2,
-  },
-
-  input: {
-    color: "black",
-    padding: 5,
-    backgroundColor: "white",
-    borderColor: "black",
-    borderWidth: 2,
-    width: "50%",
-  },
-
-  button_list: {
-    borderRadius: 10,
-    width: "30%",
-    backgroundColor: "white",
-    textAlign: "center",
-    borderColor: "black",
-    borderWidth: 2,
-  },
-
-  text_button_list: {
-    fontWeight: "bold",
-    textAlignVertical: "center",
-    textAlign: "center",
-    padding: 10,
   },
 
   container_items_list: {
