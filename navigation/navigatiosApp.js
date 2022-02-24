@@ -14,22 +14,42 @@ function navigationApp() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Menu">
         <Stack.Screen
-          options={{ headerTitleAlign: "center" }}
+          options={{
+            headerTitleAlign: "center",
+            headerTitleStyle: {
+              color: "white",
+            },
+          }}
           name="Menu"
           component={IndexScreen}
         />
         <Stack.Screen
-          options={{ headerTitleAlign: "center" }}
+          options={{
+            headerTitleAlign: "center",
+            headerTitleStyle: {
+              color: "white",
+            },
+          }}
           name="Boton Antipanico"
           component={ButtonAntipanicScreen}
         />
         <Stack.Screen
-          options={{ headerTitleAlign: "center" }}
+          options={{
+            headerTitleAlign: "center",
+            headerTitleStyle: {
+              color: "white",
+            },
+          }}
           name="Solicitud de credito"
           component={CreditsScreen}
         />
         <Stack.Screen
-          options={{ headerTitleAlign: "center" }}
+          options={{
+            headerTitleAlign: "center",
+            headerTitleStyle: {
+              color: "white",
+            },
+          }}
           name="Subsidio"
           component={SubsidiesScreen}
         />
