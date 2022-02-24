@@ -13,13 +13,26 @@ function navigationApp() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Menu">
-        <Stack.Screen name="Menu" component={IndexScreen} />
         <Stack.Screen
+          options={{ headerTitleAlign: "center" }}
+          name="Menu"
+          component={IndexScreen}
+        />
+        <Stack.Screen
+          options={{ headerTitleAlign: "center" }}
           name="Boton Antipanico"
           component={ButtonAntipanicScreen}
         />
-        <Stack.Screen name="Solicitud de credito" component={CreditsScreen} />
-        <Stack.Screen name="Subsidio" component={SubsidiesScreen} />
+        <Stack.Screen
+          options={{ headerTitleAlign: "center" }}
+          name="Solicitud de credito"
+          component={CreditsScreen}
+        />
+        <Stack.Screen
+          options={{ headerTitleAlign: "center" }}
+          name="Subsidio"
+          component={SubsidiesScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

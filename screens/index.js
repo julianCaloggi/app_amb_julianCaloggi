@@ -29,11 +29,11 @@ export default function Index({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.container_header}>
-        <Image source={require("../img/logo/logo.png")} />
-      </View>
-
       <ScrollView style={styles.Scroll}>
+        <View style={styles.container_header}>
+          <Image source={require("../img/logo/logo.png")} />
+        </View>
+
         <View style={styles.all_container}>
           <TouchableOpacity style={styles.button_init}>
             <Image source={require("../img/credencial.png")} />
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     margin: 0,
   },
 
-  Scroll: { marginTop: 5 },
+  Scroll: { marginTop: 0 },
 
   container_header: {
     paddingTop: 20,

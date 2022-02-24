@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  ScrollView,
+  Linking,
+} from "react-native";
 import Slider from "@react-native-community/slider";
 import { Picker } from "@react-native-picker/picker";
 import { useState } from "react";
@@ -19,73 +26,80 @@ export default function Credits({}) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.container_tittle_credit}>
-        <Text style={styles.tittle_credit}>Solicitud de</Text>
-        <Text style={styles.tittle_credit_2}>credito</Text>
-      </View>
-
-      <View style={styles.container_desc_calc}>
-        <View style={styles.container_red_text}>
-          <Text style={styles.red_text}>Seleciona el tipo de</Text>
-          <Text style={styles.red_text}>descuento y realiza el</Text>
-          <Text style={styles.red_text}>calculo on-line</Text>
+      <ScrollView>
+        <View style={styles.container_tittle_credit}>
+          <Text style={styles.tittle_credit}>Solicitud de</Text>
+          <Text style={styles.tittle_credit_2}>credito</Text>
         </View>
 
-        <View style={styles.container_picker}>
-          <Picker
-            style={styles.picker}
-            selectedValue={selectedLanguage}
-            onValueChange={(itemValue) => setSelectedLanguage(itemValue)}
-          >
-            <Picker.Item label="Descuento de Haberes" value="" />
-            <Picker.Item label="Descuento de Haberes 2" value="" />
-          </Picker>
-        </View>
+        <View style={styles.container_desc_calc}>
+          <View style={styles.container_red_text}>
+            <Text style={styles.red_text}>Seleciona el tipo de</Text>
+            <Text style={styles.red_text}>descuento y realiza el</Text>
+            <Text style={styles.red_text}>calculo on-line</Text>
+          </View>
 
-        <View style={styles.container_slider}>
-          <Text style={styles.text_slider}>Capital:${range}</Text>
-          <Slider
-            style={styles.slider}
-            minimumValue={5000}
-            maximumValue={100000}
-            minimumTrackTintColor="#29d2e4"
-            maximumTrackTintColor="#29d2e4"
-            thumbTintColor="#7dd87d"
-            value={1}
-            onValueChange={(value) => setRange(parseInt(value * 1))}
-          />
-          <Text style={styles.text_slider}>Tiempo:{month} meses</Text>
-          <Slider
-            style={styles.slider}
-            minimumValue={1}
-            maximumValue={12}
-            minimumTrackTintColor="#29d2e4"
-            maximumTrackTintColor="#29d2e4"
-            thumbTintColor="#7dd87d"
-            value={1}
-            onValueChange={(value) => setMonth(parseInt(value * 1))}
-          />
-        </View>
+          <View style={styles.container_picker}>
+            <Picker
+              style={styles.picker}
+              selectedValue={selectedLanguage}
+              onValueChange={(itemValue) => setSelectedLanguage(itemValue)}
+            >
+              <Picker.Item label="Descuento de Haberes" value="" />
+              <Picker.Item label="Descuento de Haberes 2" value="" />
+            </Picker>
+          </View>
 
-        <View style={styles.container_TOT_doc}>
-          <Text style={styles.text_slider}>Pago mensual de:</Text>
-          <Text style={styles.TOT_num}>${total}</Text>
+          <View style={styles.container_slider}>
+            <Text style={styles.text_slider}>Capital:${range}</Text>
+            <Slider
+              style={styles.slider}
+              minimumValue={5000}
+              maximumValue={100000}
+              minimumTrackTintColor="#29d2e4"
+              maximumTrackTintColor="#29d2e4"
+              thumbTintColor="#7dd87d"
+              value={1}
+              onValueChange={(value) => setRange(parseInt(value * 1))}
+            />
+            <Text style={styles.text_slider}>Tiempo:{month} meses</Text>
+            <Slider
+              style={styles.slider}
+              minimumValue={1}
+              maximumValue={12}
+              minimumTrackTintColor="#29d2e4"
+              maximumTrackTintColor="#29d2e4"
+              thumbTintColor="#7dd87d"
+              value={1}
+              onValueChange={(value) => setMonth(parseInt(value * 1))}
+            />
+          </View>
 
-          <View style={styles.container_expl_doc}>
-            <Text style={styles.expl_doc_blue}>Documentacion necesaria:</Text>
-            <Text style={styles.expl_doc_red}>
-              DNI (frente y dorso),ultimo recibo de sueldo,servicios a su
-              nombre,comprobante CBU y certificado de afectacion a nombre de
-              AMEBO
-            </Text>
+          <View style={styles.container_TOT_doc}>
+            <Text style={styles.text_slider}>Pago mensual de:</Text>
+            <Text style={styles.TOT_num}>${total}</Text>
+
+            <View style={styles.container_expl_doc}>
+              <Text style={styles.expl_doc_blue}>Documentacion necesaria:</Text>
+              <Text style={styles.expl_doc_red}>
+                DNI (frente y dorso),ultimo recibo de sueldo,servicios a su
+                nombre,comprobante CBU y certificado de afectacion a nombre de
+                AMEBO
+              </Text>
+            </View>
           </View>
         </View>
-      </View>
-      <View style={styles.container_button_sol}>
-        <TouchableOpacity style={styles.button_sol} onPress={handlerloanPress}>
-          <Text style={styles.container_button_sol_text}>¡Solicitalo ya!</Text>
-        </TouchableOpacity>
-      </View>
+        <View style={styles.container_button_sol}>
+          <TouchableOpacity
+            style={styles.button_sol}
+            onPress={handlerloanPress}
+          >
+            <Text style={styles.container_button_sol_text}>
+              ¡Solicitalo ya!
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </View>
   );
 }
