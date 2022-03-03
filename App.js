@@ -1,14 +1,6 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  TouchableOpacity,
-  Image,
-} from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import NavigationApp from "./navigation/navigatioApp";
 
-import NavigationApp from "./navigation/navigatiosApp";
-
-export default function App({ navigation }) {
+export default function App() {
   return <NavigationApp />;
 }

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "app_amb_julianCaloggi",
-    "slug": "app_amb_julianCaloggi",
+    "name": "trabajo_ch",
+    "slug": "trabajo_ch",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,9 +13,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
